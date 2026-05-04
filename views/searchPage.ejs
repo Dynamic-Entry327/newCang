@@ -1,88 +1,344 @@
-     1	<!DOCTYPE html>
-     2	<html lang="pt-ao">
-     3	<head>
-     4	    <meta charset="UTF-8">
-     5	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     6	       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     7	    <link rel="icon" href="icons/projectent-icon.png">
-     8	    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/all.css">
-     9	    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/all.min.css">
-    10	    <link rel="stylesheet" href="/css/style.css">
-    11	    <link rel="stylesheet" href="css/header.css">
-    12	    <link rel="stylesheet" href="css/searchPage.css">
-    13	    <title>Projectent Animes - Pesquisa</title>
-    14	</head>
-    15	<body>
-    16	             <div class="header">
-    17	        <div class="logo">
-    18	            <a href="#">
-    19	                <img src="img/projectent.png" alt="Logo de Projectent">
-    20	            </a>
-    21	        </div>
-    22	        <div class="navbar">
-    23	            <ul id="mobile">
-    24	                <li id="ico-menu"><i class="fa-solid fa-bars"></i></li>
-    25	            </ul>
-    26	            <ul id="desktop-bar">
-    27	                <li><a href="index.html">Pagina inicial</a></li>
-    28	                <li><a href="lancamentos.html">Lançamentos</a></li>
-    29	                <li><a href="searchPage.html">Pesquisar</a></li>
-    30	                <li><a href="categories.html">Categorias</a></li>
-    31	                <li><a href="sobre.html">Sobre</a></li>
-    32	            </ul>
-    33	        </div>
-    34	        <div class="menubar">
-    35	            <i class="fa-solid fa-close"></i>
-    36	             <ul>
-    37	                <li><form action=""><input type="search"><input type="submit" value="Pesquisar"></form></li>
-    38	                <li><a href="index.html">Pagina inicial</a></li>
-    39	                <li><a href="lancamentos.html">Lançamentos</a></li>
-    40	                <li><a href="searchPage.html">Pesquisar</a></li>
-    41	                <li><a href="categories.html">Categorias</a></li>
-    42	                <li><a href="sobre.html">Sobre</a></li>
-    43	            </ul>
-    44	        </div>
-    45	    </div>
-    46	
-    47	
-    48	    <div class="main">
-    49	        <div class="content">
-    50	            <h2>Pesquisa</h2>
-    51	            <form action="/search" method="get">
-    52	                <input type="search" name="title">
-    53	                <input type="submit" value="Pesquisar">
-    54	            </form>
-    55	            <% if(dados){%>
-    56	            <div class="box-cards">
-    57	            <% dados.forEach(item => { %>
-    58	         <div class="cards">
-    59	                    <a href="/info?url=<%=item.url%>">
-    60	                        <img src="<%= item.src %>" alt="">
-    61	                        <div class="legend titulo">
-    62	                            <h3><%= item.title %></h3>
-    63	                        </div>
-    64	                        <div class="legend episodio">
-    65	                            <h4><%= item.episode %></h4>
-    66	                        </div>
-    67	                    </a>
-    68	                </div>
-    69	<% }) %>
-    70	        
-    71	    </div>
-    72	    <% }%>
-    73	            </div>
-    74	        </div>
-    75	    </div>
-    76	
-    77	    <hr>
-    78	    
-    79	    <div class="footer">
-    80	        <h1>Projectent</h1>
-    81	        <p>Este site utiliza o proprio servidor para hospedar os conteúdos.</p>
-    82	        <p>Siga as nossas páginas do Facebook para mais informações.</p>
-    83	    </div>
-    84	
-    85	    <script src="js/config.js"></script>
-    86	
-    87	</body>
-    88	</html>
+<!DOCTYPE html>
+<html lang="pt-ao">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href='https://imglur.com/get/r7vlDV.png'>
+    
+    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/all.css">
+    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/searchPage.css">
+    <title>Projectent Animes - Pesquisar</title>
+    <style>
+        *{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial,"Time New Roman",sans-serif;
+    background-color: rgb(22, 22, 22);
+    color: #e8e9e7;
+}
+
+.main{
+    width: 95%;
+    margin: 40px auto;
+    height: 40vh;
+}
+.main .content{
+    width: 100%;
+}
+.main .content h2{
+    position: relative;
+    background-color: #0b6100;
+    line-height: 8vh;
+    padding-left: 16px;
+    font-size: 3.5vw;
+    margin-bottom: 30px;
+}
+.main .content h2::before{
+    content: "";
+    background-color: #f1f1f1;
+    height: 6.5vh;
+    padding: 6px;
+    position: absolute;
+    left: 0;
+}
+.main .content form{
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+}
+.main .content form input[type=search]{
+    padding: 10px 4px;
+    width: 45%;
+}
+.main .content form input[type=submit]{
+    padding: 10px 4px;
+    width: 24%;
+    background-color: #2b7dca;
+    color: #fff;
+    cursor: pointer;
+}
+
+.main .content form input[type=submit]:hover{
+    background-color: #4ae2e7;
+    color: #000000;
+}
+
+
+.main .content .box-cards{
+    width: 99%;
+    margin: auto;
+    border: 1px solid #010a00;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    place-content: center;
+    gap: 60px;
+    padding: 12px;
+
+}
+
+.main .content .box-cards .cards{
+    border: 1px solid #f1f1f1;
+    height: 280px;
+    box-shadow: 0px 0px 6px #4ae2e7;
+    margin-bottom: 80px;
+
+}
+
+.main .content .box-cards .cards a{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #f1f1f1;
+
+}
+
+.main .content .box-cards .cards a img{
+    width: 100%;
+    height: 100%;
+    transition: filter 1s ease;
+}
+
+.main .content .box-cards .cards a:hover img{
+   filter: blur(8px);
+}
+
+.main .content .box-cards .cards a .legend{
+    position: absolute;
+    padding: 5px;
+    
+}
+
+.titulo {
+  width: 100%;
+  bottom: -80px;
+  text-align: center;
+  font-size: 1.3vw;
+  
+}
+
+
+
+hr{
+    border: 1px solid #fff;
+    width: 95%;
+    margin: auto;
+}
+
+.footer{
+    text-align: center;
+}
+
+.footer h1{
+    line-height: 80px;
+    font-size: 5vw;
+}
+
+.footer p{
+    line-height: 40px;
+    font-size: 3.5vw;
+
+}
+
+@media (max-width:989px) {
+    .main .content .box-cards{
+    gap: 10px;
+    padding: 10px;
+
+}
+
+.main .content .box-cards .cards{
+    height: 250px;
+    min-width: 90px;
+
+}
+    
+}
+
+@media (max-width:765px){
+    .main .content .box-cards{
+    gap: 5px;
+    padding: 5px;
+
+}
+    .main .content .box-cards .cards{
+    height: 200px;
+  
+}
+}
+
+@media (max-width:524px){
+    #mobile{display: flex;}
+    #desktop-bar{display: none;}
+    .main .content .box-cards{
+    gap: 5px;
+    padding: 0;
+    border: none;
+
+}
+    .main .content .box-cards .cards{
+    height: 150px;
+  
+}
+}
+
+@media (max-width:488px){
+    #desktop-bar{display: none;}
+    .main .content .box-cards{
+    gap: 1px;
+    padding: 0;
+    border: none;
+
+}
+    .main .content .box-cards .cards{
+    height: 150px;
+  
+}
+}
+
+@media (max-width:472px){
+    #desktop-bar{display: none;}
+    .main .content .box-cards{
+    grid-template-columns: auto auto auto auto;
+    gap: 4px;
+    padding: 0;
+    border: none;
+
+}
+    .main .content .box-cards .cards{
+    height: 150px;
+  
+}
+}
+
+@media (max-width:472px){
+    #desktop-bar{display: none;}
+    .main .content .box-cards{
+    grid-template-columns: auto auto auto;
+    gap: 4px;
+    padding: 0;
+    border: none;
+
+}
+    .main .content .box-cards .cards{
+    height: 150px;
+  
+}
+}
+
+@media (max-width:297px){
+    #desktop-bar{display: none;}
+    .main .content .box-cards{
+    grid-template-columns: auto auto;
+    gap: 4px;
+    padding: 0;
+    border: none;
+
+}
+    .main .content .box-cards .cards{
+    height: 150px;
+  
+}
+}
+    </style>
+        <script src="https://pl29332336.profitablecpmratenetwork.com/32/ac/87/32ac87b22a31578e408a336d707868c2.js"></script>
+</head>
+<body>
+ <div class="header">
+        <div class="logo">
+            <a href="/">
+                <img src='https://imglur.com/get/XN4hTb.png' alt='XN4hTb'>
+            </a>
+        </div>
+        <div class="navbar">
+            <ul id="mobile">
+                <li id="ico-menu"><i class="fa-solid fa-bars"></i></li>
+            </ul>
+            <ul id="desktop-bar">
+                <li><a href="/">Pagina inicial</a></li>
+                <li><a href="/lancamentos">Lançamentos</a></li>
+                <li><a href="/search">Pesquisar</a></li>
+                <li><a href="/sobre">Sobre</a></li>
+            </ul>
+        </div>
+        <div class="menubar">
+            <i class="fa-solid fa-close"></i>
+             <ul>
+                <li><form action="/search"><input type="search"><input type="submit" value="Pesquisar"></form></li>
+                <li><a href="/">Pagina inicial</a></li>
+                <li><a href="/lancamentos">Lançamentos</a></li>
+                <li><a href="/sobre">Sobre</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="main">
+        <div class="content">
+            <h2>Pesquisa</h2>
+            <form action="/search" method="get">
+                <input type="search" name="title">
+                <input type="submit" value="Pesquisar">
+            </form>
+            <% if(dados){%>
+            <div class="box-cards">
+            <% dados.forEach(item => { %>
+         <div class="cards">
+                    <a href="/info?url=<%=item.url%>?odr=1">
+                        <img src="<%= item.src %>" alt="">
+                        <div class="legend titulo">
+                            <h3><%= item.title %></h3>
+                        </div>
+                        <div class="legend episodio">
+                            <h4><%= item.episode %></h4>
+                        </div>
+                    </a>
+                </div>
+<% }) %>
+        
+    </div>
+    <% }%>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    
+    <div class="footer">
+        <h1>Projectent</h1>
+                <p>Este site não utiliza o proprio servidor para hospedar os videos.</p>
+        <p>Siga as nossas páginas do Facebook para mais informações.</p>
+    </div>
+
+        <script>
+    const menu = document.querySelector('#ico-menu')
+    const menuBar = document.querySelector('.menubar')
+    const close = document.querySelector('.fa-close')
+
+
+
+menu.addEventListener('click',()=>{
+    menuBar.classList.toggle('showmenu')
+
+})
+
+close.addEventListener('click',()=>{
+    menuBar.classList.toggle('showmenu')
+
+})
+    </script>
+
+</body>
+</html>
