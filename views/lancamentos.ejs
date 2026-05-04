@@ -1,474 +1,494 @@
-     1	<!DOCTYPE html>
-     2	<html lang="pt-ao">
-     3	<head>
-     4	    <meta charset="UTF-8">
-     5	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     6	      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     7	    <title>Projectent Animes - Lançamentos</title>
-     8	    <style type="text/css">
-     9	    *{
-    10	    border: 0;
-    11	    margin: 0;
-    12	    padding: 0;
-    13	    box-sizing: border-box;
-    14	}
-    15	
-    16	body{
-    17	    font-family: Arial,"Time New Roman",sans-serif;
-    18	    background-color: rgb(22, 22, 22);
-    19	    color: #e8e9e7;
-    20	}
-    21	.header {
-    22	  width: 100%;
-    23	  height: 100px;
-    24	  background-color: rgba(29, 29, 29, 0.945);
-    25	  display: flex;
-    26	  justify-content: space-between;
-    27	  align-items: center;
-    28	  position: sticky;
-    29	  top: 0;
-    30	  z-index: 9;
-    31	}
-    32	
-    33	.header .logo {
-    34	  width: 20%;
-    35	  height: 75%;
-    36	  display: flex;
-    37	  margin-left: 20px;
-    38	}
-    39	
-    40	.header .logo a {
-    41	  width: 100%;
-    42	  height: 100%;
-    43	  display: flex;
-    44	}
-    45	
-    46	.header .logo a img {
-    47	  width: 100%;
-    48	}
-    49	
-    50	.header .navbar {
-    51	  margin-right: 35px;
-    52	  display: flex;
-    53	}
-    54	
-    55	.header .navbar ul {
-    56	  list-style: none;
-    57	  display: flex;
-    58	}
-    59	
-    60	.header .navbar ul li {
-    61	  padding: 10px;
-    62	}
-    63	
-    64	.header .navbar ul li a {
-    65	  text-decoration: none;
-    66	  text-transform: capitalize;
-    67	  padding: 10px 6px;
-    68	  color: #e8e9e7;
-    69	  font-size: 1.5vw;
-    70	  transition: background-color .50s ease-in-out;
-    71	
-    72	
-    73	}
-    74	
-    75	.header .navbar ul li a:hover {
-    76	  background-color: #4ae2e7;
-    77	  color: #000;
-    78	}
-    79	
-    80	#mobile {
-    81	  display: none;
-    82	}
-    83	
-    84	#mobile li:hover {
-    85	  background-color: #3d3d3d;
-    86	}
-    87	
-    88	.menubar {
-    89	  background-color: rgba(29, 29, 29, 0.767);
-    90	  position: fixed;
-    91	  top: 0;
-    92	  right: 0;
-    93	  width: 100%;
-    94	  height: 100vh;
-    95	  display: none;
-    96	}
-    97	
-    98	.showmenu {
-    99	  display: block;
-   100	}
-   101	
-   102	.menubar ul {
-   103	  position: absolute;
-   104	  top: 0;
-   105	  right: 0;
-   106	  width: 90%;
-   107	  height: 100vh;
-   108	  list-style: none;
-   109	  padding: 12px 0px;
-   110	  background-color: #141414;
-   111	
-   112	}
-   113	
-   114	.menubar ul li {
-   115	  background-color: #141414;
-   116	  padding: 10px 8px;
-   117	}
-   118	
-   119	.menubar ul li a {
-   120	  color: #e8e9e7;
-   121	  text-decoration: none;
-   122	  font-size: 3.4vw;
-   123	  padding: 12px 6px;
-   124	  display: block;
-   125	  transition: all 1s ease;
-   126	}
-   127	
-   128	.menubar ul li a:hover {
-   129	  background-color: #4ae2e7;
-   130	  color: #000;
-   131	}
-   132	
-   133	.menubar i {
-   134	  font-size: 5vw;
-   135	  position: absolute;
-   136	  top: 15px;
-   137	  left: 5px;
-   138	  z-index: 9;
-   139	}
-   140	
-   141	.menubar ul li form input[type="search"] {
-   142	  background-color: transparent;
-   143	  border: 1px solid #e8e9e7;
-   144	  border-radius: 4px;
-   145	  color: #e8e9e7;
-   146	  width: 65%;
-   147	}
-   148	
-   149	.menubar ul li form input[type="submit"] {
-   150	  background-color: #0b6100;
-   151	  color: #e8e9e7;
-   152	  margin-left: 5px;
-   153	  width: 30%;
-   154	  font-size: 3.4vw
-   155	}
-   156	
-   157	.menubar ul li form input {
-   158	  padding: 8px;
-   159	}
-   160	
-   161	  .main {
-   162	  width: 95%;
-   163	  margin: 40px auto;
-   164	}
-   165	
-   166	.main .container {
-   167	  width: 100%;
-   168	}
-   169	
-   170	.main .container h2 {
-   171	  position: relative;
-   172	  background-color: #0b6100;
-   173	  line-height: 8vh;
-   174	  padding-left: 16px;
-   175	  margin-bottom: 30px;
-   176	  font-size: 3.5vw;
-   177	}
-   178	
-   179	.main .container h2::before {
-   180	  content: "";
-   181	  background-color: #f1f1f1;
-   182	  height: 6.2vh;
-   183	  padding: 6px;
-   184	  position: absolute;
-   185	  left: 0;
-   186	}
-   187	
-   188	.main .container .box-cards {
-   189	  width: 99%;
-   190	  margin: auto;
-   191	  border: 1px solid #010a00;
-   192	  border-radius: 10px;
-   193	  display: grid;
-   194	  grid-template-columns: auto auto auto auto auto;
-   195	  place-content: center;
-   196	  gap: 40px;
-   197	  padding: 12px;
-   198	
-   199	}
-   200	
-   201	.main .container .box-cards .cards {
-   202	  border: 1px solid #f1f1f1;
-   203	  height: 280px;
-   204	  box-shadow: 0px 0px 6px #4ae2e7;
-   205	  min-width: 133px;
-   206	
-   207	}
-   208	
-   209	.main .container .box-cards .cards a {
-   210	  position: relative;
-   211	  display: block;
-   212	  width: 100%;
-   213	  height: 100%;
-   214	  text-decoration: none;
-   215	  color: #f1f1f1;
-   216	
-   217	}
-   218	
-   219	.main .container .box-cards .cards a img {
-   220	  width: 100%;
-   221	  height: 100%;
-   222	  transition: filter 1s ease;
-   223	}
-   224	
-   225	.main .container .box-cards .cards a:hover img {
-   226	  filter: blur(8px);
-   227	}
-   228	
-   229	.main .container .box-cards .cards a .legend {
-   230	  position: absolute;
-   231	  padding: 4px;
-   232	
-   233	}
-   234	
-   235	.episodio {
-   236	  top: 0;
-   237	  left: 0;
-   238	  width: 40%;
-   239	  background-color: #0b6100;
-   240	  border-bottom-right-radius: 15px;
-   241	  font-size: 1.2vw;
-   242	
-   243	
-   244	}
-   245	
-   246	.temporada {
-   247	  bottom: 0;
-   248	  left: 0;
-   249	  width: 45%;
-   250	  background-color: #0b6100;
-   251	  border-top-right-radius: 15px;
-   252	  font-size: 1.2vw;
-   253	
-   254	}
-   255	
-   256	.titulo {
-   257	  width: 100%;
-   258	  bottom: 100px;
-   259	  text-align: center;
-   260	  font-size: 1.3vw;
-   261	}
-   262	
-   263	hr {
-   264	  border: 1px solid #fff;
-   265	  width: 95%;
-   266	  margin: auto;
-   267	}
-   268	
-   269	.footer {
-   270	  text-align: center;
-   271	}
-   272	
-   273	.footer h1 {
-   274	  line-height: 80px;
-   275	  font-size: 5vw;
-   276	}
-   277	
-   278	.footer p {
-   279	  line-height: 40px;
-   280	  font-size: 3.5vw;
-   281	
-   282	}
-   283	
-   284	@media (max-width:989px) {
-   285	  .main .container .box-cards {
-   286	    gap: 10px;
-   287	    padding: 10px;
-   288	
-   289	  }
-   290	
-   291	  .main .container .box-cards .cards {
-   292	    height: 250px;
-   293	    min-width: 90px;
-   294	
-   295	  }
-   296	
-   297	}
-   298	
-   299	@media (max-width:765px) {
-   300	  .main .container .box-cards {
-   301	    gap: 5px;
-   302	    padding: 5px;
-   303	
-   304	  }
-   305	
-   306	  .main .container .box-cards .cards {
-   307	    height: 200px;
-   308	
-   309	  }
-   310	}
-   311	
-   312	@media (max-width:524px) {
-   313	  #mobile {
-   314	    display: flex;
-   315	  }
-   316	
-   317	  #desktop-bar {
-   318	    display: none;
-   319	  }
-   320	
-   321	  .main .container .box-cards {
-   322	    gap: 5px;
-   323	    padding: 0;
-   324	    border: none;
-   325	
-   326	  }
-   327	
-   328	  .main .container .box-cards .cards {
-   329	    height: 150px;
-   330	
-   331	  }
-   332	}
-   333	
-   334	@media (max-width:488px) {
-   335	  #desktop-bar {
-   336	    display: none;
-   337	  }
-   338	
-   339	  .main .container .box-cards {
-   340	    gap: 1px;
-   341	    padding: 0;
-   342	    border: none;
-   343	
-   344	  }
-   345	
-   346	  .main .container .box-cards .cards {
-   347	    height: 150px;
-   348	
-   349	  }
-   350	}
-   351	
-   352	@media (max-width:472px) {
-   353	  #desktop-bar {
-   354	    display: none;
-   355	  }
-   356	
-   357	  .main .container .box-cards {
-   358	    grid-template-columns: auto auto auto auto;
-   359	    gap: 4px;
-   360	    padding: 0;
-   361	    border: none;
-   362	
-   363	  }
-   364	
-   365	  .main .container .box-cards .cards {
-   366	    height: 150px;
-   367	
-   368	  }
-   369	}
-   370	
-   371	@media (max-width:472px) {
-   372	  #desktop-bar {
-   373	    display: none;
-   374	  }
-   375	
-   376	  .main .container .box-cards {
-   377	    grid-template-columns: auto auto auto;
-   378	    gap: 4px;
-   379	    padding: 0;
-   380	    border: none;
-   381	
-   382	  }
-   383	
-   384	  .main .container .box-cards .cards {
-   385	    height: 150px;
-   386	
-   387	  }
-   388	}
-   389	
-   390	@media (max-width:297px) {
-   391	  #desktop-bar {
-   392	    display: none;
-   393	  }
-   394	
-   395	  .main .container .box-cards {
-   396	    grid-template-columns: auto auto;
-   397	    gap: 4px;
-   398	    padding: 0;
-   399	    border: none;
-   400	
-   401	  }
-   402	
-   403	  .main .container .box-cards .cards {
-   404	    height: 150px;
-   405	
-   406	  }
-   407	}
-   408	    </style>
-   409	</head>
-   410	<body>
-   411	      <div class="header">
-   412	        <div class="logo">
-   413	            <a href="/">
-   414	                <img src='https://imglur.com/get/XN4hTb.png' alt='XN4hTb'>
-   415	            </a>
-   416	        </div>
-   417	        <div class="navbar">
-   418	            <ul id="mobile">
-   419	                <li id="ico-menu"><i class="fa-solid fa-bars"></i></li>
-   420	            </ul>
-   421	            <ul id="desktop-bar">
-   422	                <li><a href="/">Pagina inicial</a></li>
-   423	                <li><a href="/lancamentos">Lançamentos</a></li>
-   424	                <li><a href="/searchPage">Pesquisar</a></li>
-   425	                <li><a href="/categories">Categorias</a></li>
-   426	                <li><a href="/sobre">Sobre</a></li>
-   427	            </ul>
-   428	        </div>
-   429	        <div class="menubar">
-   430	            <i class="fa-solid fa-close"></i>
-   431	             <ul>
-   432	                <li><form action=""><input type="search"><input type="submit" value="Pesquisar"></form></li>
-   433	                <li><a href="index.html">Pagina inicial</a></li>
-   434	                <li><a href="lancamentos.html">Lançamentos</a></li>
-   435	                <li><a href="searchPage.html">Pesquisar</a></li>
-   436	                <li><a href="categories.html">Categorias</a></li>
-   437	                <li><a href="sobre.html">Sobre</a></li>
-   438	            </ul>
-   439	        </div>
-   440	    </div>
-   441	    <div class="main">
-   442	         <div class="container">
-   443	            <h2>Animes em Lançamentos</h2>
-   444	        <div class="box-cards">
-   445	  <% dados.forEach(item => { %>
-   446	         <div class="cards">
-   447	                    <a href="/assistir?url=<%=item.url%>" target="_blank">
-   448	                        <img src="<%= item.src %>" alt="">
-   449	                        <div class="legend titulo">
-   450	                            <h3><%= item.title %></h3>
-   451	                        </div>
-   452	                        <div class="legend episodio">
-   453	                            <h4><%= item.episode %></h4>
-   454	                        </div>
-   455	                    </a>
-   456	                </div>
-   457	<% }) %>
-   458	
-   459	        </div>
-   460	    </div>
-   461	    </div>
-   462	   
-   463	
-   464	    <hr>
-   465	
-   466	    <div class="footer">
-   467	        <h1>Projectent</h1>
-   468	        <p>Este site utiliza o proprio servidor para hospedar os conteúdos.</p>
-   469	        <p>Siga as nossas páginas do Facebook para mais informações.</p>
-   470	    </div>
-   471	    
-   472	    <script src="js/config.js"></script>
-   473	</body>
-   474	</html>
+<!DOCTYPE html>
+<html lang="pt-ao">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projectent Animes - Lançamentos</title>
+
+    <link rel="icon" href='https://imglur.com/get/r7vlDV.png'>
+    
+    <style type="text/css">
+    *{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial,"Time New Roman",sans-serif;
+    background-color: rgb(22, 22, 22);
+    color: #e8e9e7;
+}
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: rgba(29, 29, 29, 0.945);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+
+.header .logo {
+  width: 20%;
+  height: 75%;
+  display: flex;
+  margin-left: 20px;
+}
+
+.header .logo a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.header .logo a img {
+  width: 100%;
+}
+
+.header .navbar {
+  margin-right: 35px;
+  display: flex;
+}
+
+.header .navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.header .navbar ul li {
+  padding: 10px;
+}
+
+.header .navbar ul li a {
+  text-decoration: none;
+  text-transform: capitalize;
+  padding: 10px 6px;
+  color: #e8e9e7;
+  font-size: 1.5vw;
+  transition: background-color .50s ease-in-out;
+
+
+}
+
+.header .navbar ul li a:hover {
+  background-color: #4ae2e7;
+  color: #000;
+}
+
+#mobile {
+  display: none;
+}
+
+#mobile li:hover {
+  background-color: #3d3d3d;
+}
+
+.menubar {
+  background-color: rgba(29, 29, 29, 0.767);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  display: none;
+}
+
+.showmenu {
+  display: block;
+}
+
+.menubar ul {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 90%;
+  height: 100vh;
+  list-style: none;
+  padding: 12px 0px;
+  background-color: #141414;
+
+}
+
+.menubar ul li {
+  background-color: #141414;
+  padding: 10px 8px;
+}
+
+.menubar ul li a {
+  color: #e8e9e7;
+  text-decoration: none;
+  font-size: 3.4vw;
+  padding: 12px 6px;
+  display: block;
+  transition: all 1s ease;
+}
+
+.menubar ul li a:hover {
+  background-color: #4ae2e7;
+  color: #000;
+}
+
+.menubar i {
+  font-size: 5vw;
+  position: absolute;
+  top: 15px;
+  left: 5px;
+  z-index: 9;
+}
+
+.menubar ul li form input[type="search"] {
+  background-color: transparent;
+  border: 1px solid #e8e9e7;
+  border-radius: 4px;
+  color: #e8e9e7;
+  width: 65%;
+}
+
+.menubar ul li form input[type="submit"] {
+  background-color: #0b6100;
+  color: #e8e9e7;
+  margin-left: 5px;
+  width: 30%;
+  font-size: 3.4vw
+}
+
+.menubar ul li form input {
+  padding: 8px;
+}
+
+  .main {
+  width: 95%;
+  margin: 40px auto;
+}
+
+.main .container {
+  width: 100%;
+}
+
+.main .container h2 {
+  position: relative;
+  background-color: #0b6100;
+  line-height: 8vh;
+  padding-left: 16px;
+  margin-bottom: 30px;
+  font-size: 3.5vw;
+}
+
+.main .container h2::before {
+  content: "";
+  background-color: #f1f1f1;
+  height: 6.2vh;
+  padding: 6px;
+  position: absolute;
+  left: 0;
+}
+
+.main .container .box-cards {
+  width: 99%;
+  margin: auto;
+  border: 1px solid #010a00;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  place-content: center;
+  gap: 40px;
+  padding: 12px;
+
+}
+
+.main .container .box-cards .cards {
+  border: 1px solid #f1f1f1;
+  height: 280px;
+  box-shadow: 0px 0px 6px #4ae2e7;
+  min-width: 133px;
+  margin-bottom: 80px;
+
+}
+
+.main .container .box-cards .cards a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #f1f1f1;
+
+}
+
+.main .container .box-cards .cards a img {
+  width: 100%;
+  height: 100%;
+  transition: filter 1s ease;
+}
+
+.main .container .box-cards .cards a:hover img {
+  filter: blur(8px);
+}
+
+.main .container .box-cards .cards a .legend {
+  position: absolute;
+  padding: 4px;
+
+}
+
+.episodio {
+  top: 0;
+  left: 0;
+  width: 40%;
+  background-color: #0b6100;
+  border-bottom-right-radius: 15px;
+  font-size: 1.2vw;
+
+
+}
+
+.temporada {
+  bottom: 0;
+  left: 0;
+  width: 45%;
+  background-color: #0b6100;
+  border-top-right-radius: 15px;
+  font-size: 1.2vw;
+
+}
+
+.titulo {
+  width: 100%;
+  bottom: -80px;
+  text-align: center;
+  font-size: 1.3vw;
+  
+}
+
+hr {
+  border: 1px solid #fff;
+  width: 95%;
+  margin: auto;
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer h1 {
+  line-height: 80px;
+  font-size: 5vw;
+}
+
+.footer p {
+  line-height: 40px;
+  font-size: 3.5vw;
+
+}
+
+@media (max-width:989px) {
+  .main .container .box-cards {
+    gap: 10px;
+    padding: 10px;
+
+  }
+
+  .main .container .box-cards .cards {
+    height: 250px;
+    min-width: 90px;
+
+  }
+
+}
+
+@media (max-width:765px) {
+  .main .container .box-cards {
+    gap: 5px;
+    padding: 5px;
+
+  }
+
+  .main .container .box-cards .cards {
+    height: 200px;
+
+  }
+}
+
+@media (max-width:524px) {
+  #mobile {
+    display: flex;
+  }
+
+  #desktop-bar {
+    display: none;
+  }
+
+  .main .container .box-cards {
+    gap: 5px;
+    padding: 0;
+    border: none;
+
+  }
+
+  .main .container .box-cards .cards {
+    height: 150px;
+
+  }
+}
+
+@media (max-width:488px) {
+  #desktop-bar {
+    display: none;
+  }
+
+  .main .container .box-cards {
+    gap: 1px;
+    padding: 0;
+    border: none;
+
+  }
+
+  .main .container .box-cards .cards {
+    height: 150px;
+
+  }
+}
+
+@media (max-width:472px) {
+  #desktop-bar {
+    display: none;
+  }
+
+  .main .container .box-cards {
+    grid-template-columns: auto auto auto auto;
+    gap: 4px;
+    padding: 0;
+    border: none;
+
+  }
+
+  .main .container .box-cards .cards {
+    height: 150px;
+
+  }
+}
+
+@media (max-width:472px) {
+  #desktop-bar {
+    display: none;
+  }
+
+  .main .container .box-cards {
+    grid-template-columns: auto auto auto;
+    gap: 4px;
+    padding: 0;
+    border: none;
+
+  }
+
+  .main .container .box-cards .cards {
+    height: 150px;
+
+  }
+}
+
+@media (max-width:297px) {
+  #desktop-bar {
+    display: none;
+  }
+
+  .main .container .box-cards {
+    grid-template-columns: auto auto;
+    gap: 4px;
+    padding: 0;
+    border: none;
+
+  }
+
+  .main .container .box-cards .cards {
+    height: 150px;
+
+  }
+}
+    </style>
+        <script src="https://pl29332336.profitablecpmratenetwork.com/32/ac/87/32ac87b22a31578e408a336d707868c2.js"></script>
+</head>
+<body>
+      <div class="header">
+        <div class="logo">
+            <a href="/">
+                <img src='https://imglur.com/get/XN4hTb.png' alt='XN4hTb'>
+            </a>
+        </div>
+        <div class="navbar">
+            <ul id="mobile">
+                <li id="ico-menu"><i class="fa-solid fa-bars"></i></li>
+            </ul>
+            <ul id="desktop-bar">
+                <li><a href="/">Pagina inicial</a></li>
+                <li><a href="/lancamentos">Lançamentos</a></li>
+                <li><a href="/search">Pesquisar</a></li>
+                <li><a href="/sobre">Sobre</a></li>
+            </ul>
+        </div>
+        <div class="menubar">
+            <i class="fa-solid fa-close"></i>
+             <ul>
+                <li><form action="/search"><input type="search"><input type="submit" value="Pesquisar"></form></li>
+                <li><a href="/">Pagina inicial</a></li>
+                <li><a href="/lancamentos">Lançamentos</a></li>
+                <li><a href="/sobre">Sobre</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="main">
+         <div class="container">
+            <h2>Animes em Lançamentos</h2>
+        <div class="box-cards">
+  <% dados.forEach(item => { %>
+         <div class="cards">
+                    <a href="/assistir?url=<%=item.url%>" target="_blank">
+                        <img src="<%= item.src %>" alt="">
+                        <div class="legend titulo">
+                            <h3><%= item.title %></h3>
+                        </div>
+                        <div class="legend episodio">
+                            <h4><%= item.episode %></h4>
+                        </div>
+                    </a>
+                </div>
+<% }) %>
+
+        </div>
+    </div>
+    </div>
+   
+
+    <hr>
+
+    <div class="footer">
+        <h1>Projectent</h1>
+        <p>Este site não utiliza o proprio servidor para hospedar os videos.</p>
+        <p>Siga as nossas páginas do Facebook para mais informações.</p>
+    </div>
+    
+        <script>
+    const menu = document.querySelector('#ico-menu')
+    const menuBar = document.querySelector('.menubar')
+    const close = document.querySelector('.fa-close')
+
+
+
+menu.addEventListener('click',()=>{
+    menuBar.classList.toggle('showmenu')
+
+})
+
+close.addEventListener('click',()=>{
+    menuBar.classList.toggle('showmenu')
+
+})
+    </script>
+</body>
+</html>
