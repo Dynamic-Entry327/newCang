@@ -1,480 +1,499 @@
-     1	<!DOCTYPE html>
-     2	<html lang="pt-ao">
-     3	<head>
-     4	    <meta charset="UTF-8">
-     5	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     6	    <link rel="icon" href="icons/projectent-icon.png">
-     7	    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/all.css">
-     8	    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/all.min.css">
-     9	    <link rel="stylesheet" href="css/style.css">
-    10	    <link rel="stylesheet" href="css/header.css">
-    11	    <link rel="stylesheet" href="css/index.css">
-    12	    <title>Projectent Animes - Página inicial</title>
-    13	    <style type="text/css">
-    14	    *{
-    15	    border: 0;
-    16	    margin: 0;
-    17	    padding: 0;
-    18	    box-sizing: border-box;
-    19	}
-    20	
-    21	body{
-    22	    font-family: Arial,"Time New Roman",sans-serif;
-    23	    background-color: rgb(22, 22, 22);
-    24	    color: #e8e9e7;
-    25	}
-    26	.header {
-    27	  width: 100%;
-    28	  height: 100px;
-    29	  background-color: rgba(29, 29, 29, 0.945);
-    30	  display: flex;
-    31	  justify-content: space-between;
-    32	  align-items: center;
-    33	  position: sticky;
-    34	  top: 0;
-    35	  z-index: 9;
-    36	}
-    37	
-    38	.header .logo {
-    39	  width: 20%;
-    40	  height: 75%;
-    41	  display: flex;
-    42	  margin-left: 20px;
-    43	}
-    44	
-    45	.header .logo a {
-    46	  width: 100%;
-    47	  height: 100%;
-    48	  display: flex;
-    49	}
-    50	
-    51	.header .logo a img {
-    52	  width: 100%;
-    53	}
-    54	
-    55	.header .navbar {
-    56	  margin-right: 35px;
-    57	  display: flex;
-    58	}
-    59	
-    60	.header .navbar ul {
-    61	  list-style: none;
-    62	  display: flex;
-    63	}
-    64	
-    65	.header .navbar ul li {
-    66	  padding: 10px;
-    67	}
-    68	
-    69	.header .navbar ul li a {
-    70	  text-decoration: none;
-    71	  text-transform: capitalize;
-    72	  padding: 10px 6px;
-    73	  color: #e8e9e7;
-    74	  font-size: 1.5vw;
-    75	  transition: background-color .50s ease-in-out;
-    76	
-    77	
-    78	}
-    79	
-    80	.header .navbar ul li a:hover {
-    81	  background-color: #4ae2e7;
-    82	  color: #000;
-    83	}
-    84	
-    85	#mobile {
-    86	  display: none;
-    87	}
-    88	
-    89	#mobile li:hover {
-    90	  background-color: #3d3d3d;
-    91	}
-    92	
-    93	.menubar {
-    94	  background-color: rgba(29, 29, 29, 0.767);
-    95	  position: fixed;
-    96	  top: 0;
-    97	  right: 0;
-    98	  width: 100%;
-    99	  height: 100vh;
-   100	  display: none;
-   101	}
-   102	
-   103	.showmenu {
-   104	  display: block;
-   105	}
-   106	
-   107	.menubar ul {
-   108	  position: absolute;
-   109	  top: 0;
-   110	  right: 0;
-   111	  width: 90%;
-   112	  height: 100vh;
-   113	  list-style: none;
-   114	  padding: 12px 0px;
-   115	  background-color: #141414;
-   116	
-   117	}
-   118	
-   119	.menubar ul li {
-   120	  background-color: #141414;
-   121	  padding: 10px 8px;
-   122	}
-   123	
-   124	.menubar ul li a {
-   125	  color: #e8e9e7;
-   126	  text-decoration: none;
-   127	  font-size: 3.4vw;
-   128	  padding: 12px 6px;
-   129	  display: block;
-   130	  transition: all 1s ease;
-   131	}
-   132	
-   133	.menubar ul li a:hover {
-   134	  background-color: #4ae2e7;
-   135	  color: #000;
-   136	}
-   137	
-   138	.menubar i {
-   139	  font-size: 5vw;
-   140	  position: absolute;
-   141	  top: 15px;
-   142	  left: 5px;
-   143	  z-index: 9;
-   144	}
-   145	
-   146	.menubar ul li form input[type="search"] {
-   147	  background-color: transparent;
-   148	  border: 1px solid #e8e9e7;
-   149	  border-radius: 4px;
-   150	  color: #e8e9e7;
-   151	  width: 65%;
-   152	}
-   153	
-   154	.menubar ul li form input[type="submit"] {
-   155	  background-color: #0b6100;
-   156	  color: #e8e9e7;
-   157	  margin-left: 5px;
-   158	  width: 30%;
-   159	  font-size: 3.4vw
-   160	}
-   161	
-   162	.menubar ul li form input {
-   163	  padding: 8px;
-   164	}
-   165	
-   166	  .main {
-   167	  width: 95%;
-   168	  margin: 40px auto;
-   169	}
-   170	
-   171	.main .container {
-   172	  width: 100%;
-   173	}
-   174	
-   175	.main .container h2 {
-   176	  position: relative;
-   177	  background-color: #0b6100;
-   178	  line-height: 8vh;
-   179	  padding-left: 16px;
-   180	  margin-bottom: 30px;
-   181	  font-size: 3.5vw;
-   182	}
-   183	
-   184	.main .container h2::before {
-   185	  content: "";
-   186	  background-color: #f1f1f1;
-   187	  height: 6.2vh;
-   188	  padding: 6px;
-   189	  position: absolute;
-   190	  left: 0;
-   191	}
-   192	
-   193	.main .container .box-cards {
-   194	  width: 99%;
-   195	  margin: auto;
-   196	  border: 1px solid #010a00;
-   197	  border-radius: 10px;
-   198	  display: grid;
-   199	  grid-template-columns: auto auto auto auto auto;
-   200	  place-content: center;
-   201	  gap: 40px;
-   202	  padding: 12px;
-   203	
-   204	}
-   205	
-   206	.main .container .box-cards .cards {
-   207	  border: 1px solid #f1f1f1;
-   208	  height: 280px;
-   209	  box-shadow: 0px 0px 6px #4ae2e7;
-   210	  min-width: 133px;
-   211	
-   212	}
-   213	
-   214	.main .container .box-cards .cards a {
-   215	  position: relative;
-   216	  display: block;
-   217	  width: 100%;
-   218	  height: 100%;
-   219	  text-decoration: none;
-   220	  color: #f1f1f1;
-   221	
-   222	}
-   223	
-   224	.main .container .box-cards .cards a img {
-   225	  width: 100%;
-   226	  height: 100%;
-   227	  transition: filter 1s ease;
-   228	}
-   229	
-   230	.main .container .box-cards .cards a:hover img {
-   231	  filter: blur(8px);
-   232	}
-   233	
-   234	.main .container .box-cards .cards a .legend {
-   235	  position: absolute;
-   236	  padding: 4px;
-   237	
-   238	}
-   239	
-   240	.episodio {
-   241	  top: 0;
-   242	  left: 0;
-   243	  width: 40%;
-   244	  background-color: #0b6100;
-   245	  border-bottom-right-radius: 15px;
-   246	  font-size: 1.2vw;
-   247	
-   248	
-   249	}
-   250	
-   251	.temporada {
-   252	  bottom: 0;
-   253	  left: 0;
-   254	  width: 45%;
-   255	  background-color: #0b6100;
-   256	  border-top-right-radius: 15px;
-   257	  font-size: 1.2vw;
-   258	
-   259	}
-   260	
-   261	.titulo {
-   262	  width: 100%;
-   263	  bottom: 100px;
-   264	  text-align: center;
-   265	  font-size: 1.3vw;
-   266	}
-   267	
-   268	hr {
-   269	  border: 1px solid #fff;
-   270	  width: 95%;
-   271	  margin: auto;
-   272	}
-   273	
-   274	.footer {
-   275	  text-align: center;
-   276	}
-   277	
-   278	.footer h1 {
-   279	  line-height: 80px;
-   280	  font-size: 5vw;
-   281	}
-   282	
-   283	.footer p {
-   284	  line-height: 40px;
-   285	  font-size: 3.5vw;
-   286	
-   287	}
-   288	
-   289	@media (max-width:989px) {
-   290	  .main .container .box-cards {
-   291	    gap: 10px;
-   292	    padding: 10px;
-   293	
-   294	  }
-   295	
-   296	  .main .container .box-cards .cards {
-   297	    height: 250px;
-   298	    min-width: 90px;
-   299	
-   300	  }
-   301	
-   302	}
-   303	
-   304	@media (max-width:765px) {
-   305	  .main .container .box-cards {
-   306	    gap: 5px;
-   307	    padding: 5px;
-   308	
-   309	  }
-   310	
-   311	  .main .container .box-cards .cards {
-   312	    height: 200px;
-   313	
-   314	  }
-   315	}
-   316	
-   317	@media (max-width:524px) {
-   318	  #mobile {
-   319	    display: flex;
-   320	  }
-   321	
-   322	  #desktop-bar {
-   323	    display: none;
-   324	  }
-   325	
-   326	  .main .container .box-cards {
-   327	    gap: 5px;
-   328	    padding: 0;
-   329	    border: none;
-   330	
-   331	  }
-   332	
-   333	  .main .container .box-cards .cards {
-   334	    height: 150px;
-   335	
-   336	  }
-   337	}
-   338	
-   339	@media (max-width:488px) {
-   340	  #desktop-bar {
-   341	    display: none;
-   342	  }
-   343	
-   344	  .main .container .box-cards {
-   345	    gap: 1px;
-   346	    padding: 0;
-   347	    border: none;
-   348	
-   349	  }
-   350	
-   351	  .main .container .box-cards .cards {
-   352	    height: 150px;
-   353	
-   354	  }
-   355	}
-   356	
-   357	@media (max-width:472px) {
-   358	  #desktop-bar {
-   359	    display: none;
-   360	  }
-   361	
-   362	  .main .container .box-cards {
-   363	    grid-template-columns: auto auto auto auto;
-   364	    gap: 4px;
-   365	    padding: 0;
-   366	    border: none;
-   367	
-   368	  }
-   369	
-   370	  .main .container .box-cards .cards {
-   371	    height: 150px;
-   372	
-   373	  }
-   374	}
-   375	
-   376	@media (max-width:472px) {
-   377	  #desktop-bar {
-   378	    display: none;
-   379	  }
-   380	
-   381	  .main .container .box-cards {
-   382	    grid-template-columns: auto auto auto;
-   383	    gap: 4px;
-   384	    padding: 0;
-   385	    border: none;
-   386	
-   387	  }
-   388	
-   389	  .main .container .box-cards .cards {
-   390	    height: 150px;
-   391	
-   392	  }
-   393	}
-   394	
-   395	@media (max-width:297px) {
-   396	  #desktop-bar {
-   397	    display: none;
-   398	  }
-   399	
-   400	  .main .container .box-cards {
-   401	    grid-template-columns: auto auto;
-   402	    gap: 4px;
-   403	    padding: 0;
-   404	    border: none;
-   405	
-   406	  }
-   407	
-   408	  .main .container .box-cards .cards {
-   409	    height: 150px;
-   410	
-   411	  }
-   412	}
-   413	    </style>
-   414	</head>
-   415	<body>
-   416	    <div class="header">
-   417	        <div class="logo">
-   418	            <a href="/">
-   419	                <img src='https://imglur.com/get/XN4hTb.png' alt='XN4hTb'>
-   420	            </a>
-   421	        </div>
-   422	        <div class="navbar">
-   423	            <ul id="mobile">
-   424	                <li id="ico-menu"><i class="fa-solid fa-bars"></i></li>
-   425	            </ul>
-   426	            <ul id="desktop-bar">
-   427	                <li><a href="/">Pagina inicial</a></li>
-   428	                <li><a href="/lancamentos">Lançamentos</a></li>
-   429	                <li><a href="/search">Pesquisar</a></li>
-   430	                <li><a href="/categories">Categorias</a></li>
-   431	                <li><a href="/sobre">Sobre</a></li>
-   432	            </ul>
-   433	        </div>
-   434	        <div class="menubar">
-   435	            <i class="fa-solid fa-close"></i>
-   436	             <ul>
-   437	                <li><form action=""><input type="search"><input type="submit" value="Pesquisar"></form></li>
-   438	                <li><a href="index.html">Pagina inicial</a></li>
-   439	                <li><a href="lancamentos.html">Lançamentos</a></li>
-   440	                <li><a href="searchPage.html">Pesquisar</a></li>
-   441	                <li><a href="categories.html">Categorias</a></li>
-   442	                <li><a href="sobre.html">Sobre</a></li>
-   443	            </ul>
-   444	        </div>
-   445	    </div>
-   446	    <div class="main">
-   447	        <div class="container">
-   448	            <h2> Últimos Episódios</h2>
-   449	            <div class="box-cards">
-   450	            <% dados.forEach(item => { %>
-   451	         <div class="cards">
-   452	                    <a href="/assistir?url=<%=item.url%>" target="_blank">
-   453	                        <img src="<%= item.src %>" alt="">
-   454	                        <div class="legend titulo">
-   455	                            <h3><%= item.title %></h3>
-   456	                        </div>
-   457	                        <div class="legend episodio">
-   458	                            <h4><%= item.episode %></h4>
-   459	                        </div>
-   460	                    </a>
-   461	                </div>
-   462	<% }) %>
-   463	              
-   464	
-   465	
-   466	            </div>
-   467	        </div>
-   468	    </div>
-   469	
-   470	    <hr>
-   471	    
-   472	    <div class="footer">
-   473	        <h1>Projectent</h1>
-   474	        <p>Este site utiliza o proprio servidor para hospedar os conteúdos.</p>
-   475	        <p>Siga as nossas páginas do Facebook para mais informações.</p>
-   476	    </div>
-   477	    
-   478	    <script src="js/config.js"></script>
-   479	</body>
-   480	</html>
+<!DOCTYPE html>
+<html lang="pt-ao">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href='https://imglur.com/get/r7vlDV.png'>
+
+    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/all.css">
+    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Projectent Animes - Página inicial</title>
+    <style type="text/css">
+    *{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial,"Time New Roman",sans-serif;
+    background-color: rgb(22, 22, 22);
+    color: #e8e9e7;
+}
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: rgba(29, 29, 29, 0.945);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+
+.header .logo {
+  width: 20%;
+  height: 75%;
+  display: flex;
+  margin-left: 20px;
+}
+
+.header .logo a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.header .logo a img {
+  width: 100%;
+}
+
+.header .navbar {
+  margin-right: 35px;
+  display: flex;
+}
+
+.header .navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.header .navbar ul li {
+  padding: 10px;
+}
+
+.header .navbar ul li a {
+  text-decoration: none;
+  text-transform: capitalize;
+  padding: 10px 6px;
+  color: #e8e9e7;
+  font-size: 1.5vw;
+  transition: background-color .50s ease-in-out;
+
+
+}
+
+.header .navbar ul li a:hover {
+  background-color: #4ae2e7;
+  color: #000;
+}
+
+#mobile {
+  display: none;
+}
+
+#mobile li:hover {
+  background-color: #3d3d3d;
+}
+
+.menubar {
+  background-color: rgba(29, 29, 29, 0.767);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  display: none;
+}
+
+.showmenu {
+  display: block;
+}
+
+.menubar ul {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 90%;
+  height: 100vh;
+  list-style: none;
+  padding: 12px 0px;
+  background-color: #141414;
+
+}
+
+.menubar ul li {
+  background-color: #141414;
+  padding: 10px 8px;
+}
+
+.menubar ul li a {
+  color: #e8e9e7;
+  text-decoration: none;
+  font-size: 3.4vw;
+  padding: 12px 6px;
+  display: block;
+  transition: all 1s ease;
+}
+
+.menubar ul li a:hover {
+  background-color: #4ae2e7;
+  color: #000;
+}
+
+.menubar i {
+  font-size: 5vw;
+  position: absolute;
+  top: 15px;
+  left: 5px;
+  z-index: 9;
+}
+
+.menubar ul li form input[type="search"] {
+  background-color: transparent;
+  border: 1px solid #e8e9e7;
+  border-radius: 4px;
+  color: #e8e9e7;
+  width: 65%;
+}
+
+.menubar ul li form input[type="submit"] {
+  background-color: #0b6100;
+  color: #e8e9e7;
+  margin-left: 5px;
+  width: 30%;
+  font-size: 3.4vw
+}
+
+.menubar ul li form input {
+  padding: 8px;
+}
+
+.main {
+  width: 95%;
+  margin: 40px auto;
+}
+
+.main .container {
+  width: 100%;
+}
+
+.main .container h2 {
+  position: relative;
+  background-color: #0b6100;
+  line-height: 8vh;
+  padding-left: 16px;
+  margin-bottom: 30px;
+  font-size: 3.5vw;
+}
+
+.main .container h2::before {
+  content: "";
+  background-color: #f1f1f1;
+  height: 6.2vh;
+  padding: 6px;
+  position: absolute;
+  left: 0;
+}
+
+.main .container .box-cards {
+  width: 99%;
+  margin: auto;
+  border: 1px solid #010a00;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  place-content: center;
+  gap: 40px;
+  padding: 12px;
+
+}
+
+.main .container .box-cards .cards {
+  border: 1px solid #f1f1f1;
+  height: 280px;
+  box-shadow: 0px 0px 6px #4ae2e7;
+  min-width: 133px;
+  margin-bottom: 80px;
+
+}
+
+.main .container .box-cards .cards a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #f1f1f1;
+
+}
+
+.main .container .box-cards .cards a img {
+  width: 100%;
+  height: 100%;
+  transition: filter 1s ease;
+}
+
+.main .container .box-cards .cards a:hover img {
+  filter: blur(8px);
+}
+
+.main .container .box-cards .cards a .legend {
+  position: absolute;
+  padding: 4px;
+
+}
+
+.episodio {
+  top: 0;
+  left: 0;
+  width: 40%;
+  background-color: #0b6100;
+  border-bottom-right-radius: 15px;
+  font-size: 1.2vw;
+
+
+}
+
+.temporada {
+  bottom: 0;
+  left: 0;
+  width: 45%;
+  background-color: #0b6100;
+  border-top-right-radius: 15px;
+  font-size: 1.2vw;
+
+}
+
+.titulo {
+  width: 100%;
+  bottom: -80px;
+  text-align: center;
+  font-size: 1.3vw;
+  
+}
+
+hr {
+  border: 1px solid #fff;
+  width: 95%;
+  margin: auto;
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer h1 {
+  line-height: 80px;
+  font-size: 4.5vw;
+}
+
+.footer p {
+  line-height: 40px;
+  font-size: 3.5vw;
+
+}
+
+@media (max-width:989px) {
+  .main .container .box-cards {
+    gap: 10px;
+    padding: 10px;
+
+  }
+
+  .main .container .box-cards .cards {
+    height: 250px;
+    min-width: 90px;
+
+  }
+
+}
+
+@media (max-width:765px) {
+  .main .container .box-cards {
+    gap: 5px;
+    padding: 5px;
+
+  }
+
+  .main .container .box-cards .cards {
+    height: 200px;
+
+  }
+}
+
+@media (max-width:524px) {
+  #mobile {
+    display: flex;
+  }
+
+  #desktop-bar {
+    display: none;
+  }
+
+  .main .container .box-cards {
+    gap: 5px;
+    padding: 0;
+    border: none;
+
+  }
+
+  .main .container .box-cards .cards {
+    height: 150px;
+
+  }
+}
+
+@media (max-width:488px) {
+  #desktop-bar {
+    display: none;
+  }
+
+  .main .container .box-cards {
+    gap: 1px;
+    padding: 0;
+    border: none;
+
+  }
+
+  .main .container .box-cards .cards {
+    height: 150px;
+
+  }
+}
+
+@media (max-width:472px) {
+  #desktop-bar {
+    display: none;
+  }
+
+  .main .container .box-cards {
+    grid-template-columns: auto auto auto auto;
+    gap: 4px;
+    padding: 0;
+    border: none;
+
+  }
+
+  .main .container .box-cards .cards {
+    height: 150px;
+
+  }
+}
+
+@media (max-width:472px) {
+  #desktop-bar {
+    display: none;
+  }
+
+  .main .container .box-cards {
+    grid-template-columns: auto auto auto;
+    gap: 4px;
+    padding: 0;
+    border: none;
+
+  }
+
+  .main .container .box-cards .cards {
+    height: 150px;
+
+  }
+}
+
+@media (max-width:297px) {
+  #desktop-bar {
+    display: none;
+  }
+
+  .main .container .box-cards {
+    grid-template-columns: auto auto;
+    gap: 4px;
+    padding: 0;
+    border: none;
+
+  }
+
+  .main .container .box-cards .cards {
+    height: 150px;
+
+  }
+}
+    </style>
+    <script src="https://pl29332336.profitablecpmratenetwork.com/32/ac/87/32ac87b22a31578e408a336d707868c2.js"></script>
+</head>
+<body>
+   <div class="header">
+        <div class="logo">
+            <a href="/">
+                <img src='https://imglur.com/get/XN4hTb.png' alt='XN4hTb'>
+            </a>
+        </div>
+        <div class="navbar">
+            <ul id="mobile">
+                <li id="ico-menu"><i class="fa-solid fa-bars">Menu</i></li>
+            </ul>
+            <ul id="desktop-bar">
+                <li><a href="/">Pagina inicial</a></li>
+                <li><a href="/lancamentos">Lançamentos</a></li>
+                <li><a href="/search">Pesquisar</a></li>
+                <li><a href="/sobre">Sobre</a></li>
+            </ul>
+        </div>
+        <div class="menubar">
+            <i class="fa-solid fa-close"></i>
+             <ul>
+                <li><form action="/search"><input type="search"><input type="submit" value="Pesquisar"></form></li>
+                <li><a href="/">Pagina inicial</a></li>
+                <li><a href="/lancamentos">Lançamentos</a></li>
+                <li><a href="/sobre">Sobre</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="main">
+        <div class="container">
+            <h2> Últimos Episódios</h2>
+            <div class="box-cards">
+            <% dados.forEach(item => { %>
+         <div class="cards">
+                    <a href="/assistir?url=<%=item.url%>" target="_blank">
+                        <img src="<%= item.src %>" alt="">
+                        <div class="legend titulo">
+                            <h3><%= item.title %></h3>
+                        </div>
+                        <div class="legend episodio">
+                            <h4><%= item.episode %></h4>
+                        </div>
+                    </a>
+                </div>
+<% }) %>
+              
+
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    
+    <div class="footer">
+        <h1>Projectent</h1>
+        <p>Este site não utiliza o proprio servidor para hospedar os videos.</p>
+        <p>Siga as nossas páginas do Facebook para mais informações.</p>
+    </div>
+    
+    <script>
+    const menu = document.querySelector('#ico-menu')
+    const menuBar = document.querySelector('.menubar')
+    const close = document.querySelector('.fa-close')
+
+
+
+menu.addEventListener('click',()=>{
+    menuBar.classList.toggle('showmenu')
+
+})
+
+close.addEventListener('click',()=>{
+    menuBar.classList.toggle('showmenu')
+
+})
+    </script>
+</body>
+</html>
