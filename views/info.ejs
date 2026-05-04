@@ -1,41 +1,326 @@
-     1	<!DOCTYPE html>
-     2	<html lang="en">
-     3	<head>
-     4	    <meta charset="UTF-8">
-     5	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     6	    <link rel="icon" href="icons/projectent-icon.png">
-     7	    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/solid.css">
-     8	    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/solid.min.css">
-     9	    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/all.css">
-    10	    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/all.min.css">
-    11	    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/fontawesome.css">
-    12	    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/fontawesome.min.css">
-    13	    <link rel="stylesheet" href="css/style.css">
-    14	    <link rel="stylesheet" href="css/info.css">
-    15	    <title>Download</title>
-    16	</head>
-    17	<body>
-    18	    <div class="header">
-    19	        <div class="icon-button"><i class="fa-solid fa-arrow-left"></i></div>
-    20	    </div>
-    21	    <div class="main">
-    22	        <div class="info">
-    23	            <div class="pelicula">
-    24	                <img src="<%= dados.img%>" alt="">
-    25	            </div>
-    26	            <div class="left-info">
-    27	                <p>Titulo: <%= dados.titulo[0]%></p>
-    28	                <p>Categoria: <%= dados.genre%></p>
-    29	                <p>Episodio: 299</p>
-    30	                <p>Temporadas:9</p>
-    31	                <p>Lançamento:9-12-2020</p>
-    32	                <a href="episodios.html" id="button">Listar episódios</a>
-    33	            </div>
-    34	            <div class="bottom-info">
-    35	                <h2>Sinopse</h2>
-    36	                <p><%= dados.sinopse%></p>
-    37	            </div>
-    38	        </div>
-    39	    </div>
-    40	</body>
-    41	</html> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" href='https://imglur.com/get/r7vlDV.png'>
+
+    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/solid.css">
+    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/solid.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/all.css">
+    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/all.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/fontawesome.css">
+    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/info.css">
+    <title>Info</title>
+    <style type="text/css">
+    *{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial,"Time New Roman",sans-serif;
+    background-color: rgb(22, 22, 22);
+    color: #e8e9e7;
+}
+
+.header{
+    width: 100%;
+    height: 100px;
+    background-color: rgba(29, 29, 29, 0.945);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+}
+
+.header .logo{
+    width: 20%;
+    height: 75%;
+    display: flex;
+    margin-left: 20px;
+}
+
+.header .logo a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.header .logo a img{
+   width: 100%;
+}
+
+.header .navbar{
+    margin-right: 35px;
+    display: flex;
+}
+
+.header .navbar ul{
+    list-style: none;
+    display: flex;
+}
+
+.header .navbar ul li{
+    padding: 10px;
+}
+.header .navbar ul li a{
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: 10px 6px;
+    color: #e8e9e7;
+    font-size: 1.5vw;
+    transition: background-color .50s ease-in-out;
+
+
+}
+.header .navbar ul li a:hover{
+    background-color: #4ae2e7;
+    color: #000;
+}
+
+#mobile{display: none;}
+
+#mobile li:hover{background-color: #3d3d3d;}
+
+.menubar{
+    background-color: rgba(29, 29, 29, 0.767);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+}
+
+.showmenu{display: block;}
+
+.menubar ul{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 90%;
+    height: 100vh;
+    list-style: none;
+    padding: 12px 0px;
+    background-color: #141414;
+
+}
+
+.menubar ul li{
+    background-color: #141414;
+    padding: 10px 8px;
+}
+
+.menubar ul li a{
+    color: #e8e9e7;
+    text-decoration: none;
+    font-size: 3.4vw;
+    padding: 12px 6px;
+    display: block;
+    transition: all 1s ease;
+}
+
+.menubar ul li a:hover{
+    background-color: #4ae2e7;
+    color: #000;
+}
+
+.menubar i{
+    font-size: 5vw;
+    position: absolute;
+    top: 15px;
+    left: 5px;
+    z-index: 9;
+}
+
+.menubar ul li form input[type="search"]{
+    background-color: transparent;
+    border: 1px solid #e8e9e7;
+    border-radius: 4px;
+    color: #e8e9e7;
+    width: 65%;
+}
+.menubar ul li form input[type="submit"]{
+    background-color: #0b6100;
+    color: #e8e9e7;
+    margin-left: 5px;
+    width: 30%;
+    font-size: 3.4vw
+}
+
+.menubar ul li form input{
+    padding: 8px;
+}
+
+.header{
+    width: 100%;
+    height: 100px;
+    background-color: rgba(29, 29, 29, 0.945);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+}
+
+.header .icon-button{
+    height: 4em;
+    width: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.header .icon-button i{
+    font-size: 2em;
+}
+
+.main{
+    width: 90%;
+    margin: 20px auto;
+}
+
+.main .info{
+    width: 98%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #010a00;
+    padding: 6px;
+}
+
+.main .info .pelicula{
+    width: 30%;
+    height: 300px;
+
+}
+
+.main .info .pelicula img{
+    width: 70%;
+    height: 100%;
+}
+
+.main .info .left-info{
+    width: 70%;
+    padding: 4px;
+}
+
+.main .info .left-info a{
+    text-decoration: none;
+    background-color: #2b7dca;
+    color: #fff;
+    width: 70%;
+    padding: 8px 4px;
+    position: relative;
+    top: 150px;
+    transition: background-color 1s ease;
+}
+
+.main .info .left-info a:hover{
+    background-color: #67aff3;
+}
+
+.main .info .bottom-info{
+    width: 90%;
+    margin: 10px auto;
+}
+
+.main .info .bottom-info h2{
+    text-align: center;
+    line-height: 80px;
+}
+
+.main .temp-episode{
+    margin-top: 20px;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+}
+.main .temp-episode h4{
+    line-height: 40px;
+}
+
+.main .temp-episode p{
+    background-color: #464646;
+    line-height: 40px;
+    margin: 2px;
+    padding: 4px 8px;
+}
+
+.main .temp-episode p a{
+    float: right;
+    margin-right: 4px;
+    padding: 0px 12px;
+    color: #fff;
+    text-decoration:none;
+    font-weight:bolder;
+    background:#0b6100;
+}
+    </style>
+        <script src="https://pl29332336.profitablecpmratenetwork.com/32/ac/87/32ac87b22a31578e408a336d707868c2.js"></script>
+</head>
+<body>
+   <div class="header">
+        <div class="logo">
+            <a href="/">
+                <img src='https://imglur.com/get/XN4hTb.png' alt='XN4hTb'>
+            </a>
+        </div>
+        <div class="navbar">
+            <ul id="mobile">
+                <li id="ico-menu"><i class="fa-solid fa-bars"></i></li>
+            </ul>
+            <ul id="desktop-bar">
+                <li><a href="/">Pagina inicial</a></li>
+                <li><a href="/lancamentos">Lançamentos</a></li>
+                <li><a href="/search">Pesquisar</a></li>
+                <li><a href="/sobre">Sobre</a></li>
+            </ul>
+        </div>
+        <div class="menubar">
+            <i class="fa-solid fa-close"></i>
+             <ul>
+                <li><form action="/search"><input type="search"><input type="submit" value="Pesquisar"></form></li>
+                <li><a href="/">Pagina inicial</a></li>
+                <li><a href="/lancamentos">Lançamentos</a></li>
+                <li><a href="/sobre">Sobre</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main">
+        <div class="info">
+            <div class="pelicula">
+                <img src="<%= dados.img%>" alt="">
+            </div>
+            <div class="left-info">
+                <p>Titulo: <%= dados.titulo[0]%></p>
+                <p>Categoria: <%= dados.genre%></p>
+                <p>Lançamento: <%= dados.info[0][3]%><%= dados.info[0][4]%><%= dados.info[0][5]%><%= dados.info[0][6]%><%= dados.info[0][7]%></p>
+            </div>
+            <div class="bottom-info">
+                <h2>Sinopse</h2>
+                <p><%= dados.sinopse%></p>
+            </div>
+        </div>
+             <h3>Lista de episodios</h3>
+     
+      <div class="temp-episode">
+                <%dados.epsisodio.forEach((item,index)=>{%>
+                <p><%=item%><a href="/assistir?url=<%=dados.url[index]%>" target="_blank"><i class="fa-solid fa-download">Assistir</i></a></p>
+                <%})%>
+      </div>
+    </div>
+
+</body>
+</html>
