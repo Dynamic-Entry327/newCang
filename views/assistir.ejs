@@ -1,0 +1,43 @@
+     1	<!DOCTYPE html>
+     2	<html lang="en">
+     3	<head>
+     4	    <meta charset="UTF-8">
+     5	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6	    <title>Assistir</title>
+     7	    <link rel="stylesheet" href="css/style.css">
+     8	    <link rel="stylesheet" href="css/assistir.css">
+     9	    <style type="text/css">
+    10	*{
+    11	    border: 0;
+    12	    margin: 0;
+    13	    padding: 0;
+    14	    box-sizing: border-box;
+    15	}
+    16	
+    17	body{
+    18	    font-family: Arial,"Time New Roman",sans-serif;
+    19	    background-color: rgb(22, 22, 22);
+    20	    color: #e8e9e7;
+    21	}
+    22	
+    23	.main{
+    24	    width: 90%;
+    25	    margin: auto;
+    26	    height: 100vh;
+    27	    display: flex;
+    28	    justify-content: center;
+    29	    align-items: center;
+    30	}
+    31	
+    32	.main iframe{
+    33	    width: 50%;
+    34	    height: 50%;
+    35	}
+    36	    </style>
+    37	</head>
+    38	<body>
+    39	   <div class="main">
+    40	    <iframe src="<%= dados.video %>" frameborder="0"></iframe>
+    41	   </div> 
+    42	</body>
+    43	</html>

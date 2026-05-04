@@ -1,0 +1,88 @@
+     1	<!DOCTYPE html>
+     2	<html lang="pt-ao">
+     3	<head>
+     4	    <meta charset="UTF-8">
+     5	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6	       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     7	    <link rel="icon" href="icons/projectent-icon.png">
+     8	    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/all.css">
+     9	    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/all.min.css">
+    10	    <link rel="stylesheet" href="/css/style.css">
+    11	    <link rel="stylesheet" href="css/header.css">
+    12	    <link rel="stylesheet" href="css/searchPage.css">
+    13	    <title>Projectent Animes - Pesquisa</title>
+    14	</head>
+    15	<body>
+    16	             <div class="header">
+    17	        <div class="logo">
+    18	            <a href="#">
+    19	                <img src="img/projectent.png" alt="Logo de Projectent">
+    20	            </a>
+    21	        </div>
+    22	        <div class="navbar">
+    23	            <ul id="mobile">
+    24	                <li id="ico-menu"><i class="fa-solid fa-bars"></i></li>
+    25	            </ul>
+    26	            <ul id="desktop-bar">
+    27	                <li><a href="index.html">Pagina inicial</a></li>
+    28	                <li><a href="lancamentos.html">Lançamentos</a></li>
+    29	                <li><a href="searchPage.html">Pesquisar</a></li>
+    30	                <li><a href="categories.html">Categorias</a></li>
+    31	                <li><a href="sobre.html">Sobre</a></li>
+    32	            </ul>
+    33	        </div>
+    34	        <div class="menubar">
+    35	            <i class="fa-solid fa-close"></i>
+    36	             <ul>
+    37	                <li><form action=""><input type="search"><input type="submit" value="Pesquisar"></form></li>
+    38	                <li><a href="index.html">Pagina inicial</a></li>
+    39	                <li><a href="lancamentos.html">Lançamentos</a></li>
+    40	                <li><a href="searchPage.html">Pesquisar</a></li>
+    41	                <li><a href="categories.html">Categorias</a></li>
+    42	                <li><a href="sobre.html">Sobre</a></li>
+    43	            </ul>
+    44	        </div>
+    45	    </div>
+    46	
+    47	
+    48	    <div class="main">
+    49	        <div class="content">
+    50	            <h2>Pesquisa</h2>
+    51	            <form action="/search" method="get">
+    52	                <input type="search" name="title">
+    53	                <input type="submit" value="Pesquisar">
+    54	            </form>
+    55	            <% if(dados){%>
+    56	            <div class="box-cards">
+    57	            <% dados.forEach(item => { %>
+    58	         <div class="cards">
+    59	                    <a href="/info?url=<%=item.url%>">
+    60	                        <img src="<%= item.src %>" alt="">
+    61	                        <div class="legend titulo">
+    62	                            <h3><%= item.title %></h3>
+    63	                        </div>
+    64	                        <div class="legend episodio">
+    65	                            <h4><%= item.episode %></h4>
+    66	                        </div>
+    67	                    </a>
+    68	                </div>
+    69	<% }) %>
+    70	        
+    71	    </div>
+    72	    <% }%>
+    73	            </div>
+    74	        </div>
+    75	    </div>
+    76	
+    77	    <hr>
+    78	    
+    79	    <div class="footer">
+    80	        <h1>Projectent</h1>
+    81	        <p>Este site utiliza o proprio servidor para hospedar os conteúdos.</p>
+    82	        <p>Siga as nossas páginas do Facebook para mais informações.</p>
+    83	    </div>
+    84	
+    85	    <script src="js/config.js"></script>
+    86	
+    87	</body>
+    88	</html>

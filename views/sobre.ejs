@@ -1,0 +1,383 @@
+     1	<!DOCTYPE html>
+     2	<html lang="pt-ao">
+     3	<head>
+     4	    <meta charset="UTF-8">
+     5	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6	       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     7	    <link rel="icon" href="icons/projectent-icon.png">
+     8	    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/all.css">
+     9	    <link rel="stylesheet" href="fonts/fontawesome-free-7.2.0-web/css/all.min.css">
+    10	    <link rel="stylesheet" href="css/style.css">
+    11	    <link rel="stylesheet" href="css/header.css">
+    12	    <link rel="stylesheet" href="css/sobre.css">
+    13	    <title>Projectent Animes - Sobre</title>
+    14	        <style type="text/css">
+    15	*{
+    16	    border: 0;
+    17	    margin: 0;
+    18	    padding: 0;
+    19	    box-sizing: border-box;
+    20	}
+    21	
+    22	body{
+    23	    font-family: Arial,"Time New Roman",sans-serif;
+    24	    background-color: rgb(22, 22, 22);
+    25	    color: #e8e9e7;
+    26	}
+    27	
+    28	.header {
+    29	  width: 100%;
+    30	  height: 100px;
+    31	  background-color: rgba(29, 29, 29, 0.945);
+    32	  display: flex;
+    33	  justify-content: space-between;
+    34	  align-items: center;
+    35	  position: sticky;
+    36	  top: 0;
+    37	  z-index: 9;
+    38	}
+    39	
+    40	.header .logo {
+    41	  width: 20%;
+    42	  height: 75%;
+    43	  display: flex;
+    44	  margin-left: 20px;
+    45	}
+    46	
+    47	.header .logo a {
+    48	  width: 100%;
+    49	  height: 100%;
+    50	  display: flex;
+    51	}
+    52	
+    53	.header .logo a img {
+    54	  width: 100%;
+    55	}
+    56	
+    57	.header .navbar {
+    58	  margin-right: 35px;
+    59	  display: flex;
+    60	}
+    61	
+    62	.header .navbar ul {
+    63	  list-style: none;
+    64	  display: flex;
+    65	}
+    66	
+    67	.header .navbar ul li {
+    68	  padding: 10px;
+    69	}
+    70	
+    71	.header .navbar ul li a {
+    72	  text-decoration: none;
+    73	  text-transform: capitalize;
+    74	  padding: 10px 6px;
+    75	  color: #e8e9e7;
+    76	  font-size: 1.5vw;
+    77	  transition: background-color .50s ease-in-out;
+    78	
+    79	
+    80	}
+    81	
+    82	.header .navbar ul li a:hover {
+    83	  background-color: #4ae2e7;
+    84	  color: #000;
+    85	}
+    86	
+    87	#mobile {
+    88	  display: none;
+    89	}
+    90	
+    91	#mobile li:hover {
+    92	  background-color: #3d3d3d;
+    93	}
+    94	
+    95	.menubar {
+    96	  background-color: rgba(29, 29, 29, 0.767);
+    97	  position: fixed;
+    98	  top: 0;
+    99	  right: 0;
+   100	  width: 100%;
+   101	  height: 100vh;
+   102	  display: none;
+   103	}
+   104	
+   105	.showmenu {
+   106	  display: block;
+   107	}
+   108	
+   109	.menubar ul {
+   110	  position: absolute;
+   111	  top: 0;
+   112	  right: 0;
+   113	  width: 90%;
+   114	  height: 100vh;
+   115	  list-style: none;
+   116	  padding: 12px 0px;
+   117	  background-color: #141414;
+   118	
+   119	}
+   120	
+   121	.menubar ul li {
+   122	  background-color: #141414;
+   123	  padding: 10px 8px;
+   124	}
+   125	
+   126	.menubar ul li a {
+   127	  color: #e8e9e7;
+   128	  text-decoration: none;
+   129	  font-size: 3.4vw;
+   130	  padding: 12px 6px;
+   131	  display: block;
+   132	  transition: all 1s ease;
+   133	}
+   134	
+   135	.menubar ul li a:hover {
+   136	  background-color: #4ae2e7;
+   137	  color: #000;
+   138	}
+   139	
+   140	.menubar i {
+   141	  font-size: 5vw;
+   142	  position: absolute;
+   143	  top: 15px;
+   144	  left: 5px;
+   145	  z-index: 9;
+   146	}
+   147	
+   148	.menubar ul li form input[type="search"] {
+   149	  background-color: transparent;
+   150	  border: 1px solid #e8e9e7;
+   151	  border-radius: 4px;
+   152	  color: #e8e9e7;
+   153	  width: 65%;
+   154	}
+   155	
+   156	.menubar ul li form input[type="submit"] {
+   157	  background-color: #0b6100;
+   158	  color: #e8e9e7;
+   159	  margin-left: 5px;
+   160	  width: 30%;
+   161	  font-size: 3.4vw
+   162	}
+   163	
+   164	.menubar ul li form input {
+   165	  padding: 8px;
+   166	}
+   167	
+   168	.main{
+   169	    width: 95%;
+   170	    margin: 40px auto;
+   171	    height: 45vh;
+   172	}
+   173	
+   174	.main .container{
+   175	    width: 100%;
+   176	}
+   177	
+   178	.main .container h2{
+   179	    position: relative;
+   180	    background-color: #0b6100;
+   181	    line-height: 8vh;
+   182	    padding-left: 16px;
+   183	    margin-bottom: 30px;
+   184	    font-size: 4vw;
+   185	}
+   186	
+   187	.main .container p{
+   188	    width: 90%;
+   189	    margin: auto;
+   190	}
+   191	
+   192	hr{
+   193	    border: 1px solid #fff;
+   194	    width: 95%;
+   195	    margin: auto;
+   196	}
+   197	
+   198	.footer{
+   199	    text-align: center;
+   200	}
+   201	
+   202	.footer h1{
+   203	    line-height: 80px;
+   204	    font-size: 5vw;
+   205	}
+   206	
+   207	.footer p{
+   208	    line-height: 40px;
+   209	    font-size: 3.5vw;
+   210	
+   211	}
+   212	
+   213	
+   214	@media (max-width:989px) {
+   215	    .main .content .box-cards{
+   216	    gap: 10px;
+   217	    padding: 10px;
+   218	
+   219	}
+   220	
+   221	.main .content .box-cards .cards{
+   222	    height: 250px;
+   223	    min-width: 90px;
+   224	
+   225	}
+   226	    
+   227	}
+   228	
+   229	@media (max-width:765px){
+   230	    .main .content .box-cards{
+   231	    gap: 5px;
+   232	    padding: 5px;
+   233	
+   234	}
+   235	    .main .content .box-cards .cards{
+   236	    height: 200px;
+   237	  
+   238	}
+   239	}
+   240	
+   241	@media (max-width:524px){
+   242	    #mobile{display: flex;}
+   243	    #desktop-bar{display: none;}
+   244	    .main .content .box-cards{
+   245	    gap: 5px;
+   246	    padding: 0;
+   247	    border: none;
+   248	
+   249	}
+   250	    .main .content .box-cards .cards{
+   251	    height: 150px;
+   252	  
+   253	}
+   254	}
+   255	
+   256	@media (max-width:488px){
+   257	    #desktop-bar{display: none;}
+   258	    .main .content .box-cards{
+   259	    gap: 1px;
+   260	    padding: 0;
+   261	    border: none;
+   262	
+   263	}
+   264	    .main .content .box-cards .cards{
+   265	    height: 150px;
+   266	  
+   267	}
+   268	}
+   269	
+   270	@media (max-width:472px){
+   271	    #desktop-bar{display: none;}
+   272	    .main .content .box-cards{
+   273	    grid-template-columns: auto auto auto auto;
+   274	    gap: 4px;
+   275	    padding: 0;
+   276	    border: none;
+   277	
+   278	}
+   279	    .main .content .box-cards .cards{
+   280	    height: 150px;
+   281	  
+   282	}
+   283	}
+   284	
+   285	@media (max-width:472px){
+   286	    #desktop-bar{display: none;}
+   287	    .main .content .box-cards{
+   288	    grid-template-columns: auto auto auto;
+   289	    gap: 4px;
+   290	    padding: 0;
+   291	    border: none;
+   292	
+   293	}
+   294	    .main .content .box-cards .cards{
+   295	    height: 150px;
+   296	  
+   297	}
+   298	}
+   299	
+   300	@media (max-width:297px){
+   301	    #desktop-bar{display: none;}
+   302	    .main .content .box-cards{
+   303	    grid-template-columns: auto auto;
+   304	    gap: 4px;
+   305	    padding: 0;
+   306	    border: none;
+   307	
+   308	}
+   309	    .main .content .box-cards .cards{
+   310	    height: 150px;
+   311	  
+   312	}
+   313	}
+   314	    </style>
+   315	</head>
+   316	<body>
+   317	         <div class="header">
+   318	        <div class="logo">
+   319	            <a href="/">
+   320	                <img src='https://imglur.com/get/XN4hTb.png' alt='XN4hTb'>
+   321	            </a>
+   322	        </div>
+   323	        <div class="navbar">
+   324	            <ul id="mobile">
+   325	                <li id="ico-menu"><i class="fa-solid fa-bars">Menu</i></li>
+   326	            </ul>
+   327	            <ul id="desktop-bar">
+   328	                <li><a href="/">Pagina inicial</a></li>
+   329	                <li><a href="lancamentos.html">Lançamentos</a></li>
+   330	                <li><a href="searchPage.html">Pesquisar</a></li>
+   331	                <li><a href="categories.html">Categorias</a></li>
+   332	                <li><a href="/sobre">Sobre</a></li>
+   333	            </ul>
+   334	        </div>
+   335	        <div class="menubar">
+   336	            <i class="fa-solid fa-close">X</i>
+   337	             <ul>
+   338	                <li><form action=""><input type="search"><input type="submit" value="Pesquisar"></form></li>
+   339	                <li><a href="/">Pagina inicial</a></li>
+   340	                <li><a href="/lancamentos">Lançamentos</a></li>
+   341	                <li><a href="searchPage.html">Pesquisar</a></li>
+   342	                <li><a href="categories.html">Categorias</a></li>
+   343	                <li><a href="/sobre">Sobre</a></li>
+   344	            </ul>
+   345	        </div>
+   346	    </div>
+   347	    
+   348	
+   349	    <div class="main">
+   350	        <div class="container">
+   351	            <h2>Sobre</h2>
+   352	            <p>Este site tem como objectivo disponibilizar todo o conteúdo possível da cultura popular, para que todos possam ter facilidade de acessar de graça. Qualquer coisa ou incomodo disponibizamos as noaaas redes sociais </p>
+   353	        </div>
+   354	    </div>
+   355	
+   356	    <hr>
+   357	
+   358	    <div class="footer">
+   359	        <h1>Projectent</h1>
+   360	        <p>Este site utiliza o proprio servidor para hospedar os conteúdos.</p>
+   361	        <p>Siga as nossas páginas do Facebook para mais informações.</p>
+   362	    </div>
+   363	
+   364	    <script>
+   365	    const menu = document.querySelector('#ico-menu')
+   366	    const menuBar = document.querySelector('.menubar')
+   367	    const close = document.querySelector('.fa-close')
+   368	
+   369	
+   370	
+   371	menu.addEventListener('click',()=>{
+   372	    menuBar.classList.toggle('showmenu')
+   373	
+   374	})
+   375	
+   376	close.addEventListener('click',()=>{
+   377	    menuBar.classList.toggle('showmenu')
+   378	
+   379	})
+   380	    </script>
+   381	
+   382	</body>
+   383	</html>
